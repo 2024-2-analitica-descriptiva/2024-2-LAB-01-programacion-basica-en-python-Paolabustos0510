@@ -4,7 +4,8 @@ datos requeridos se encuentran en el archivo data.csv. En este laboratorio
 solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
-data = r"files\input\data.csv"
+import os
+data = os.path.join(os.path.dirname(__file__), "../files/input/data.csv")
 datos = []
 with open( data, 'r', encoding='utf-8') as file:
     for linea in file:
