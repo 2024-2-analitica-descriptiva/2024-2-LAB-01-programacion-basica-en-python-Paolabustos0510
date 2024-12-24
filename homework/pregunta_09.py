@@ -4,23 +4,15 @@ datos requeridos se encuentran en el archivo data.csv. En este laboratorio
 solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
-def cargar_datos(file_path):
-    """
-    Carga un archivo de texto estructurado como el compartido.
-    :param file_path: Ruta del archivo de datos.
-    :return: Lista de listas donde cada sublista representa una fila.
-    """
-    datos = []
-    with open(file_path, 'r', encoding='utf-8') as file:
-        for linea in file:
-            # Dividir los datos por tabulación o un espacio
-            datos.append(linea.strip().split('\t'))
-    return datos
+data= r"C:\Users\Olga\Documents\GitHub\2024-2-LAB-01-programacion-basica-en-python-Paolabustos0510\files\input\data.csv"
 
-data= "../files/input/data.csv"
-datos = cargar_datos(data)
+datos = []
+with open( data, 'r', encoding='utf-8') as file:
+    for linea in file:
+        datos.append(linea.strip().split('\t'))
+ 
 
-def pregunta_09(datos):
+def pregunta_09():
     """
     Retorne un diccionario que contenga la cantidad de registros en que
     aparece cada clave de la columna 5.
@@ -56,5 +48,3 @@ def pregunta_09(datos):
     resultado = dict(sorted(clave_columna_5.items()))   
     return  resultado
 
-resultado_pregunta_09 = pregunta_09(datos)
-print(resultado_pregunta_09)

@@ -4,23 +4,15 @@ datos requeridos se encuentran en el archivo data.csv. En este laboratorio
 solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
-def cargar_datos(file_path):
-    """
-    Carga un archivo de texto estructurado como el compartido.
-    :param file_path: Ruta del archivo de datos.
-    :return: Lista de listas donde cada sublista representa una fila.
-    """
-    datos = []
-    with open(file_path, 'r', encoding='utf-8') as file:
-        for linea in file:
-            # Dividir los datos por tabulación o un espacio
-            datos.append(linea.strip().split('\t'))
-    return datos
+data= r"C:\Users\Olga\Documents\GitHub\2024-2-LAB-01-programacion-basica-en-python-Paolabustos0510\files\input\data.csv"
 
-data= "../files/input/data.csv"
-datos = cargar_datos(data)
+datos = []
+with open( data, 'r', encoding='utf-8') as file:
+    for linea in file:
+        datos.append(linea.strip().split('\t'))
+ 
 
-def pregunta_12(datos):
+def pregunta_12():
     """
     Genere un diccionario que contengan como clave la columna 1 y como valor
     la suma de los valores de la columna 5 sobre todo el archivo.
@@ -44,5 +36,3 @@ def pregunta_12(datos):
 
     return dict(sorted(dic_clave_columna_1.items()))
 
-resultado_pregunta_12 = pregunta_12(datos)
-print(resultado_pregunta_12)
